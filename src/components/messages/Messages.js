@@ -1,9 +1,8 @@
 // will render a list of messages which will come
 // from the message detail component
 import React from 'react';
-import { Link, Route } from 'react-router-dom'
-import ViewMessage from './ViewMessage'
-import EditMessage from './EditMessage'
+import { Link} from 'react-router-dom'
+
 
 function Messages(props) {
 
@@ -18,16 +17,7 @@ function Messages(props) {
   return(
         <div className="Messages">
             {messageDetails}
-            <Route exact path='/messages/:id' render={props => {
-             const message = props.messages.find(element => element._id.toString() === props.match.params.id)
-             return <ViewMessage message={message} {...props}/>
-           }
-         }/>
-         <Route exact path='/messages/:id/edit' render={props => {
-            const message = props.messages.find(element => element._id.toString() === props.match.params.id)
-            return <EditMessage message={message} {...props}/>
-          }
-        }/>
+            
         </div>
       )
 }
