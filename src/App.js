@@ -9,10 +9,10 @@ import TheWall from './containers/TheWall';
 
 class App extends React.Component {
 
-  componentDidMount(){
-    this.props.getMessages();
+//   componentDidMount(){
+//     this.props.getMessages();
 
-  }
+//   }
 
   render(){
     console.log(this.state)
