@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 import { connect } from 'react-redux'
-import { getMessages } from './store/actions/messageActions'
+import TheWall from './containers/TheWall';
+
+// import { getMessages } from './store/actions/messageActions'
 
 class App extends React.Component {
 
@@ -19,17 +21,19 @@ class App extends React.Component {
     return (
       <div className="App">
         The App
+        <TheWall />
       </div>
     );
 
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getMessages: () => dispatch(getMessages())
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getMessages: () => dispatch(getMessages())
+//   }
+// }
 
-export default connect(null, mapDispatchToProps)(App);
+// export default connect(null, mapDispatchToProps)(App);
+export default App
 
