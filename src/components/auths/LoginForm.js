@@ -1,7 +1,9 @@
 //will render login form
 import React, { useState } from "react";
+import { login } from '../../store/actions/authActions'
+import { connect } from 'react-redux'
 
-function Login(props) {
+function LoginForm(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -11,11 +13,15 @@ function Login(props) {
   
   const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('submitting login to eventually call action')
-      console.log('Submitted' + username + password)
+      
+      const creds = {
+        username: username,
+        password: password
+      }
+      props.login(creds)
+      props.history.push("/")
   }
-  console.log(username)
-  console.log(password)
+  
   return (
       <div className='LoginForm'>
         <form onSubmit={handleSubmit}>
@@ -40,4 +46,4 @@ function Login(props) {
   );
 }
 
-export default Login
+export default connect(null, {login})(LoginForm)

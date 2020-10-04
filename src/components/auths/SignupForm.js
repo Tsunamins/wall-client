@@ -2,7 +2,7 @@
 //will render login form
 import React, { useState } from "react";
 
-function Signup(props) {
+function SignupForm(props) {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password1, setPassword1] = useState("")
@@ -50,4 +50,4 @@ function Signup(props) {
   );
 }
 
-export default Signup
+export default SignupForm

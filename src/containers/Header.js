@@ -2,8 +2,8 @@
 // conditionally logout
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
-import Login from '../components/auths/Login'
-import Signup from '../components/auths/Signup'
+import LoginForm from '../components/auths/LoginForm'
+import SignupForm from '../components/auths/SignupForm'
 
 
 class Header extends React.Component {
@@ -18,8 +18,8 @@ class Header extends React.Component {
         <div className="Header">
             <li><Link to="/signup">Sign Up</Link></li> 
             <li><Link to="/login">Log In</Link></li>
-            <Route exact path='/signup' component={Signup}/>
-            <Route exact path='/login' component={Login}/>
+            <Route exact path='/signup' component={SignupForm}/>
+            <Route exact path='/login' component={LoginForm}/>
 
         </div>
       );
