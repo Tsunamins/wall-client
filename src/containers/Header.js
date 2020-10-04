@@ -4,7 +4,7 @@ import React from 'react'
 import { Link, Route } from 'react-router-dom'
 import LoginForm from '../components/auths/LoginForm'
 import SignupForm from '../components/auths/SignupForm'
-
+import Logout from '../components/auths/Logout'
 
 class Header extends React.Component {
 
@@ -17,7 +17,7 @@ class Header extends React.Component {
       return (
           <div className="Header">
             { this.props.isAuthenticated ?
-                <div>Logout feature will go here</div>
+                <div><Logout /></div>
                 
         : 
                 <div>
@@ -34,11 +34,6 @@ class Header extends React.Component {
     }
   }
   
-  const mapStateToProps = state => {
-   
-    return ({
- 
-    })
-  }
+
   
-export default Header
+export default Header;
