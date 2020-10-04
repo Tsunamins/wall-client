@@ -23,6 +23,7 @@ export const login = (creds) => {
             localStorage.setItem('expirationDate', expirationDate);
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));
+            dispatch(getCurrentUser())
             }
         })
         .catch(console.log)
@@ -36,6 +37,26 @@ export const checkAuthTimeout = expirationTime => {
         }, expirationTime * 1000)
     }
 }
+
+export const getCurrentUser = () => {
+    return dispatch => {
+        fetch('http://127.0.0.1:8000/wall-api/users/get-current-user/', {
+
+        })
+        .then(resp => resp.json())
+        .then(response => {
+            if(response.error){
+                alert(response.error)
+            } else {
+   
+            console.log(response)
+        }
+    })
+    .catch(console.log)
+    }
+
+}
+
 
 
 

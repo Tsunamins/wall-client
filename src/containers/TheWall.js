@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Route } from 'react-router-dom'
 import { getMessages } from '../store/actions/messageActions'
+import { getCurrentUser } from '../store/actions/authActions'
 import Messages from '../components/messages/Messages'
 import ViewMessage from '../components/messages/ViewMessage'
 import EditMessage from '../components/messages/EditMessage'
@@ -11,10 +12,11 @@ import EditMessage from '../components/messages/EditMessage'
 class TheWall extends React.Component {
     componentDidMount(){
         this.props.getMessages();
+        this.props.getCurrentUser();
       }
 
     render(){
-        console.log(this.props.messages)
+        console.log(this.props)
      
         return (
             <div className="TheWall">
@@ -40,7 +42,8 @@ class TheWall extends React.Component {
 
   const mapDispatchToProps = dispatch => {
     return {
-      getMessages: () => dispatch(getMessages())
+      getMessages: () => dispatch(getMessages()),
+      getCurrentUser: () => dispatch(getCurrentUser())
     }
   }
 
