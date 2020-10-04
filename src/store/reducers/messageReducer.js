@@ -2,9 +2,8 @@ export default function message(state = [], action) {
    
     switch (action.type) {
       case 'GET_MESSAGES':  
-        return action.posts
-      
-        
+        return action.messages
+
         default:
             return state
         }
