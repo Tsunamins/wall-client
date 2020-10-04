@@ -3,8 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import { connect } from 'react-redux'
+import { getMessages } from './store/actions/postActions'
 
 class App extends React.Component {
+
+  componentDidMount(){
+    this.props.getMessages();
+
+  }
 
   render(){
     return (
@@ -29,4 +35,18 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    allMessages: allMessages,
+  })
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getMessages: () => dispatch(actions.getMessages())
+  }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
