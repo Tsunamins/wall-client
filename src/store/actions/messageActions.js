@@ -1,7 +1,7 @@
 //ACTIONS
 export const getMessages = () => dispatch => {  
     
-    return fetch('http://127.0.0.1:8000/wall-api/messages')
+    return fetch('http://127.0.0.1:8000/wall-api/messages/')
      .then(resp => resp.json())
      .then(response => {
          if(response.error){
