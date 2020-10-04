@@ -8,7 +8,7 @@ export const getMessages = () => dispatch => {
              alert(response.error)
          } else {
             console.log(response)
-           // dispatch(getAllMessages(response.data))
+           dispatch(getAllMessages(response))
          }
          })
          .catch(console.log)
