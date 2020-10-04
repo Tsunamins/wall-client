@@ -1,11 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import { Link, NavLink, Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import TheWall from './containers/TheWall';
-
-// import { getMessages } from './store/actions/messageActions'
+import TheWall from './containers/TheWall'
+import Header from './containers/Header'
 
 class App extends React.Component {
 
@@ -21,7 +20,9 @@ class App extends React.Component {
     return (
       <div className="App">
         The App
+        <Header />
         <TheWall />
+        
       </div>
     );
 
@@ -30,10 +31,10 @@ class App extends React.Component {
 
 // const mapDispatchToProps = dispatch => {
 //   return {
-//     getMessages: () => dispatch(getMessages())
+//     
 //   }
 // }
 
 // export default connect(null, mapDispatchToProps)(App);
-export default App
+export default withRouter(App)
 
