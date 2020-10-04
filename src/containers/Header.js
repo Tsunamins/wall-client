@@ -15,12 +15,19 @@ class Header extends React.Component {
       console.log(this.props)
     
       return (
-        <div className="Header">
-            <li><Link to="/signup">Sign Up</Link></li> 
-            <li><Link to="/login">Log In</Link></li>
-            <Route exact path='/signup' component={SignupForm}/>
-            <Route exact path='/login' component={LoginForm}/>
-
+          <div className="Header">
+            { this.props.isAuthenticated ?
+                <div>Logout feature will go here</div>
+                
+        : 
+                <div>
+                    <li><Link to="/signup">Sign Up</Link></li> 
+                    <li><Link to="/login">Log In</Link></li>
+                    <Route exact path='/signup' component={SignupForm}/>
+                    <Route exact path='/login' component={LoginForm}/>
+                </div>
+        
+        }
         </div>
       );
   
