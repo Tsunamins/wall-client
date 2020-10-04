@@ -13,9 +13,7 @@ export default function auth(state=initialState, action) {
             loading: false
         };
         case 'AUTH_LOGOUT':
-            return state, {
-                token: null
-            };
+            return initialState
         default:
             return state;
     }
