@@ -14,7 +14,7 @@ class TheWall extends React.Component {
 
      
     render(){
-        console.log(this.props)
+        console.log(this.props.messages)
      
 
     
@@ -33,6 +33,12 @@ class TheWall extends React.Component {
       getMessages: () => dispatch(getMessages())
     }
   }
+
+  const mapStateToProps = state => {
+      return {
+          messages: state.messageReducer
+      }
+  }
   
-  export default connect(null, mapDispatchToProps)(TheWall);
+  export default connect(mapStateToProps, mapDispatchToProps)(TheWall);
 
