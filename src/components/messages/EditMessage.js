@@ -38,18 +38,18 @@ handleSubmit = e => {
         return (
           
             <div className="EditMessage">
-                <div><h4>Edit this Post</h4></div>
+                <div><h4>Edit this Message</h4></div>
                 <div>   
        
                     <form onSubmit={this.handleSubmit}>
                         <div>
-                         <label htmlFor="content">Add the content of the blog:</label>
+                         <label htmlFor="content">Change the Message, 250 characters or less:</label>
                             <textarea
                                 onChange={this.handleChange}
                                 value={this.state.content}
                                 placeholder={message.content}
                                 id="content"                     
-                                rows="10"
+                                rows="3"
                             />
                         </div>
         
