@@ -3,6 +3,8 @@ export default function message(state = [], action) {
     switch (action.type) {
       case 'GET_MESSAGES':  
         return action.messages
+      case 'ADD_MESSAGE':
+        return state.concat(action.message)
 
         default:
             return state
