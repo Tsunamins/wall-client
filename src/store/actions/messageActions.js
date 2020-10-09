@@ -64,6 +64,29 @@ export const editMessage = (message, id) => dispatch => {
       .catch(console.log)
 } 
 
+export const deleteMessage = (id) => dispatch => {
+    let token = localStorage.token
+    return fetch(`http://127.0.0.1:8000/wall-api/messages/${id}/delete/`, {
+        method: "DELETE",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": 'application/json',
+            "Authorization": "Token " + token
+        }
+        
+    })
+    .then(resp => resp.json())
+    .then(response => {
+        if(response.error || response.detail){
+          alert(response.error || response.detail)
+        } else {
+          console.log(response)
+          dispatch(updateMessage(response))
+        }
+      })
+      .catch(console.log)
+}
+
 //ACTION CREATORS
 export const getAllMessages = messages => {    
     return {
@@ -84,5 +107,13 @@ export const getAllMessages = messages => {
           type: 'UPDATE_MESSAGE',
           message
       }
+  }
+
+  export const destroyMessage = message => {
+
+    return {
+      type: "DELETE_MESSAGE",
+      message
+    }
   }
 
