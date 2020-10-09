@@ -35,7 +35,7 @@ class TheWall extends React.Component {
                         }
                 }/>
 
-                <CreateMessage />
+                <CreateMessage {...this.props } />
 
             </div>
         );
