@@ -17,11 +17,13 @@ export const getMessages = () => dispatch => {
 
 
 export const createMessage = (message) => dispatch => {
+    let token = localStorage.token
     return fetch('http://127.0.0.1:8000/wall-api/messages/create/', {
         method: "POST",
         headers: { 
             "Content-Type": "application/json",
-            "Accept": 'application/json'
+            "Accept": 'application/json',
+            "Authorization": "Token " + token
         },
         body: JSON.stringify(message)
         
