@@ -40,9 +40,9 @@ export const createMessage = (message) => dispatch => {
       .catch(console.log)
 }
 
-export const updateMessage = (message) => dispatch => {
+export const editMessage = (message, id) => dispatch => {
     let token = localStorage.token
-    return fetch('http://127.0.0.1:8000/wall-api/messages/update/', {
+    return fetch(`http://127.0.0.1:8000/wall-api/messages/${id}/update/`, {
         method: "PATCH",
         headers: { 
             "Content-Type": "application/json",
