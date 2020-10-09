@@ -25,7 +25,7 @@ class CreateMessage extends Component {
         this.setState({
             content: "",
         })
-        props.history.push("/")
+        this.props.history.push("/")
     };
 
 
@@ -33,7 +33,7 @@ class CreateMessage extends Component {
        
         return (
             <div className="CreateMessage">
-                <div><h4>Create a Message</h4></div>
+              
                 <div>   
                     <form onSubmit={this.handleSubmit}>
                         <div>
@@ -41,9 +41,9 @@ class CreateMessage extends Component {
                             <textarea
                                 onChange={this.handleChange}
                                 value={this.state.content}
-                                placeholder="Content"
+                                placeholder="Content, limit 250 characters"
                                 id="content"
-                                rows="10"
+                                rows="2"
                             />
                         </div>
             
