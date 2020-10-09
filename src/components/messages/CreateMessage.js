@@ -17,15 +17,17 @@ class CreateMessage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        console.log(this.props)
         const newMessage = {
             content: this.state.content,      
             };
-            console.log(newMessage)
+            
         this.props.createMessage(newMessage)
+        this.props.history.push("/")
         this.setState({
             content: "",
         })
-        this.props.history.push("/")
+       
     };
 
 
