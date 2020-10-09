@@ -11,12 +11,11 @@ export const login = (creds) => {
             body: JSON.stringify(creds)
         })
         .then(resp => resp.json())
+
         .then(response => {
             if(response.error){
                 alert(response.error)
             } else {
-   
-            console.log(response)
             const token = response.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
@@ -55,6 +54,7 @@ export const signup = (creds) => {
                 localStorage.setItem('token', token);
                 localStorage.setItem('expirationDate', expirationDate);
                 dispatch(authSuccess(token));
+                dispatch(getCurrentUser())
                 dispatch(checkAuthTimeout(3600));
             }
         })
@@ -63,25 +63,28 @@ export const signup = (creds) => {
     }
 }
 
-
-
-export const getCurrentUser = () => {
-    return dispatch => {
-        fetch('http://127.0.0.1:8000/wall-api/users/get-current-user/', {
-
-        })
+export const getCurrentUser = () => dispatch => {
+    let token = localStorage.token
+    return fetch('http://127.0.0.1:8000/wall-api/users/get-current-user/', {
+        method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": 'application/json',
+            "Authorization": "Token " + token
+        },
+    })
         .then(resp => resp.json())
+       
         .then(response => {
             if(response.error){
+                console.log(response)
                 alert(response.error)
             } else {
-   
             console.log(response)
+            dispatch(setCurrentUser(response))
         }
     })
     .catch(console.log)
-    }
-
 }
 
 
@@ -93,6 +96,14 @@ export const authSuccess = token => {
     return {
         type: "AUTH_SUCCESS",
         token
+    }
+}
+
+export const setCurrentUser = user => {
+    return {
+        type: "CURRENT_USER",
+        user
+
     }
 }
 
