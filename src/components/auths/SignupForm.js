@@ -1,6 +1,8 @@
 //will render signup form
 //will render login form
 import React, { useState } from "react";
+import { signup } from '../../store/actions/authActions'
+import { connect } from 'react-redux'
 
 function SignupForm(props) {
   const [username, setUsername] = useState("")
@@ -11,7 +13,17 @@ function SignupForm(props) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('submitting login to eventually call action')
+      console.log('submitting signup to eventually call action')
+        console.log(props)
+      const creds = {
+        username: username,
+        email: email,
+        password1: password1,
+        password2: password2
+      }
+      
+      props.signup(creds)
+      props.history.push("/")
      
   }
  
@@ -50,4 +62,4 @@ function SignupForm(props) {
   );
 }
 
-export default SignupForm
+export default connect(null, {signup})(SignupForm)
