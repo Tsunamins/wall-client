@@ -40,6 +40,30 @@ export const createMessage = (message) => dispatch => {
       .catch(console.log)
 }
 
+export const updateMessage = (message) => dispatch => {
+    let token = localStorage.token
+    return fetch('http://127.0.0.1:8000/wall-api/messages/update/', {
+        method: "PATCH",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": 'application/json',
+            "Authorization": "Token " + token
+        },
+        body: JSON.stringify(message)
+        
+    })
+    .then(resp => resp.json())
+    .then(response => {
+        if(response.error || response.detail){
+          alert(response.error || response.detail)
+        } else {
+          console.log(response)
+          dispatch(updateMessage(response))
+        }
+      })
+      .catch(console.log)
+} 
+
 //ACTION CREATORS
 export const getAllMessages = messages => {    
     return {
@@ -53,5 +77,12 @@ export const getAllMessages = messages => {
         type: "ADD_MESSAGE",
         message 
     }
+  }
+
+  export const updateMessage = message => {
+      return {
+          type: 'UPDATE_MESSAGE',
+          message
+      }
   }
 
