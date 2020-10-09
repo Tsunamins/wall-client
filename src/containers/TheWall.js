@@ -7,6 +7,7 @@ import { getCurrentUser } from '../store/actions/authActions'
 import Messages from '../components/messages/Messages'
 import ViewMessage from '../components/messages/ViewMessage'
 import EditMessage from '../components/messages/EditMessage'
+import CreateMessage from '../components/messages/CreateMessage'
 
 
 class TheWall extends React.Component {
@@ -33,6 +34,8 @@ class TheWall extends React.Component {
                     return <EditMessage message={message} {...props}/>
                         }
                 }/>
+
+                <CreateMessage />
 
             </div>
         );
