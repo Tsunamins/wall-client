@@ -1,17 +1,18 @@
 const initialState = {
     token: null,
-    error: null, 
-    loading: false
+    current: null
 }
 
 export default function auth(state=initialState, action) {
     switch (action.type) {
         case 'AUTH_SUCCESS': 
-        return state, {
+        return {...state,
             token: action.token,
-            error: null,
-            loading: false
         };
+        case 'CURRENT_USER':
+            return {...state,
+                current: action.user,
+            };  
         case 'AUTH_LOGOUT':
             return initialState
         default:
