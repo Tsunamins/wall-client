@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { editMessage } from '../../store/actions/messageActions'
 
 class EditMessage extends Component {
     
@@ -8,16 +9,18 @@ class EditMessage extends Component {
     }
 
     handleChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
+        this.setState({ 
+            [e.target.id]: e.target.value 
+        });
     };
 
     handleSubmit = e => {
         e.preventDefault();
-        const editMessage = {
+        const message = {
             content: this.state.content,
         };
 
-        this.props.editMessage(editMessage, this.props.message.id)
+        this.props.editMessage(message, this.props.message.id)
         this.setState({
             content: "",
         })
@@ -62,4 +65,4 @@ class EditMessage extends Component {
     }
 }
 
-export default EditMessage
+export default connect(null, {editMessage})(EditMessage);
