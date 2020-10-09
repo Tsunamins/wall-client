@@ -46,3 +46,10 @@ export const getAllMessages = messages => {
     }
   }
 
+  export const addMessage = message => {    
+    return {
+        type: "ADD_MESSAGE",
+        message 
+    }
+  }
+
