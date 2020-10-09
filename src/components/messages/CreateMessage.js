@@ -9,31 +9,24 @@ class CreateMessage extends Component {
       content: "",
   }
 
-handleChange = e => {
-    this.setState({ 
-        [e.target.id]: e.target.value 
-    });
-  };
+    handleChange = e => {
+        this.setState({ 
+            [e.target.id]: e.target.value 
+        });
+    };
 
-handleSubmit = e => {
-    e.preventDefault();
-    const newMessage = {
-        content: this.state.content,      
-        };
-        console.log(newMessage)
-    this.props.createMessage(newMessage)
-    this.setState({
-     
-        content: "",
-      
-        
-  })
-
-  // remember to add push history
- 
-
-    
-  };
+    handleSubmit = e => {
+        e.preventDefault();
+        const newMessage = {
+            content: this.state.content,      
+            };
+            console.log(newMessage)
+        this.props.createMessage(newMessage)
+        this.setState({
+            content: "",
+        })
+        props.history.push("/")
+    };
 
 
   render() {
@@ -46,11 +39,11 @@ handleSubmit = e => {
                         <div>
                             <label htmlFor="content">Add to the writing on the wall:</label>
                             <textarea
-                            onChange={this.handleChange}
-                            value={this.state.content}
-                            placeholder="Content"
-                            id="content"
-                            rows="10"
+                                onChange={this.handleChange}
+                                value={this.state.content}
+                                placeholder="Content"
+                                id="content"
+                                rows="10"
                             />
                         </div>
             
