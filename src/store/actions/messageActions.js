@@ -28,8 +28,8 @@ export const createMessage = (message) => dispatch => {
     })
     .then(resp => resp.json())
     .then(response => {
-        if(response.error){
-          alert(response.error)
+        if(response.error || response.detail){
+          alert(response.error || response.detail)
         } else {
           console.log(response)
           dispatch(addMessage(response))
