@@ -7,18 +7,11 @@ import SignupForm from '../components/auths/SignupForm'
 import Logout from '../components/auths/Logout'
 
 class Header extends React.Component {
-
-    
-  
     render(){
-    
-      console.log(this.props)
-    
       return (
           <div className="Header">
             { this.props.isAuthenticated ?
-                <div><Logout /></div>
-                
+                <div><Logout /></div>    
         : 
                 <div>
                     <li><Link to="/signup">Sign Up</Link></li> 
@@ -30,7 +23,6 @@ class Header extends React.Component {
         }
         </div>
       );
-  
     }
   }
   

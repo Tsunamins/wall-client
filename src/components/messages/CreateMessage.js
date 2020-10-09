@@ -17,7 +17,6 @@ class CreateMessage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.props)
         const newMessage = {
             content: this.state.content,      
             };
@@ -27,12 +26,10 @@ class CreateMessage extends Component {
         this.setState({
             content: "",
         })
-       
     };
 
 
   render() {
-       
         return (
             <div className="CreateMessage">
               

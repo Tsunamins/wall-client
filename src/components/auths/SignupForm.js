@@ -13,8 +13,6 @@ function SignupForm(props) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('submitting signup to eventually call action')
-        console.log(props)
       const creds = {
         username: username,
         email: email,

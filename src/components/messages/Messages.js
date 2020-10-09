@@ -5,9 +5,7 @@ import { Link} from 'react-router-dom'
 
 
 function Messages(props) {
-
- console.log(props)
- const messageDetails = props.messages.map(m => 
+  const messageDetails = props.messages.map(m => 
     <li key={m.id}>
       <Link to={`/messages/${m.id}`}>{m.content}</Link>
       <span>{m.user}</span>
@@ -17,9 +15,8 @@ function Messages(props) {
   return(
         <div className="Messages">
             {messageDetails}
-            
         </div>
-      )
+  )
 }
 
 export default Messages

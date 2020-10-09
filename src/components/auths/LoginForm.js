@@ -13,13 +13,14 @@ function LoginForm(props) {
   
   const handleSubmit = (event) => {
       event.preventDefault();
-      
       const creds = {
         username: username,
         password: password
       }
+
       props.login(creds)
       props.history.push("/")
+
   }
   
   return (
