@@ -23,7 +23,7 @@ export const createMessage = (message) => dispatch => {
             "Content-Type": "application/json",
             "Accept": 'application/json'
         },
-        body: JSON.stringify(postData)
+        body: JSON.stringify(message)
         
     })
     .then(resp => resp.json())
@@ -32,7 +32,7 @@ export const createMessage = (message) => dispatch => {
           alert(response.error)
         } else {
           console.log(response)
-          dispatch(addMessage(response.data))
+          dispatch(addMessage(response))
         }
       })
       .catch(console.log)
