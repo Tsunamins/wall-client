@@ -2,12 +2,13 @@
 //User it belongs to
 import React from 'react';
 import { Link } from 'react-router-dom'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { deleteMessage } from '../../store/actions/messageActions'
 
 function ViewMessage({message}) {
 
   function handleDelete(){
-    this.props.deletePost(this.props.message.id)
+    this.props.deleteMessage(this.props.message.id)
   }
      
      
@@ -34,4 +35,4 @@ function ViewMessage({message}) {
 
 }
 
-export default ViewMessage
+export default connect(null, {deleteMessage})(ViewMessage);
