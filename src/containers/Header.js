@@ -7,7 +7,27 @@ import SignupForm from '../components/auths/SignupForm'
 import Logout from '../components/auths/Logout'
 
 class Header extends React.Component {
+
+  state = {
+    showLoginForm: false,
+    showSignupForm: false,
+  };
+  showLogin = e => {
+    this.setState({
+      showLoginForm: true,
+      showSignupForm: false,
+    });
+  };
+
+  showSignup = e => {
+    this.setState({
+      showLoginForm: false,
+      showSignupForm: true
+    });
+  };
+
     render(){
+      
       return (
           <div className="Header">
             <div className="Logo"><h1>The Wall</h1></div>
@@ -15,11 +35,13 @@ class Header extends React.Component {
                 <div><Logout /></div>    
         : 
                 <div className="AuthLinks">
-                      <Link to="/signup">Sign Up</Link> 
-                      <Link to="/login">Log In</Link>
+                      <Link to="/signup" onClick={e => {this.showSignup();}}>Sign Up</Link>
+                      <Link to="/login" onClick={e => {this.showLogin();}}>Log In</Link>
+                      <SignupForm show={this.state.showSignupForm} />
+                      <LoginForm show={this.state.showLoginForm} />
                   
-                    <Route exact path='/signup' component={SignupForm}/>
-                    <Route exact path='/login' component={LoginForm}/>
+                   
+                   
                 </div>
         
         }
