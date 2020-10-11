@@ -24,9 +24,11 @@ function SignupForm(props) {
       props.history.push("/")
      
   }
- 
+  if(!props.show){
+        return null;
+      }
   return (
-      <div className='SignupForm'>
+      <div className='authModal'>
         <form onSubmit={handleSubmit}>
             <label>Username</label>
             <input type="text" value={username}
