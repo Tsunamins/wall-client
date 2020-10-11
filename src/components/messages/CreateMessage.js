@@ -35,20 +35,21 @@ class CreateMessage extends Component {
               
                 <div>   
                     <form onSubmit={this.handleSubmit}>
-                        <div>
+                    
                             <label htmlFor="content">Add to the writing on the wall:</label>
+                            <br/>
                             <textarea
                                 onChange={this.handleChange}
                                 value={this.state.content}
                                 placeholder="Content, limit 250 characters"
                                 id="content"
-                                rows="2"
+                                rows="3"
+                                cols="50"
                             />
-                        </div>
-            
-                        <div>
+                     
+                            <br/>
                             <button type="submit">Write on the Wall</button>
-                        </div>
+          
                     </form>
                 </div>
             </div>
