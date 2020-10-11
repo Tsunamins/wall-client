@@ -69,19 +69,17 @@ export const deleteMessage = (id) => dispatch => {
     return fetch(`http://127.0.0.1:8000/wall-api/messages/${id}/delete/`, {
         method: "DELETE",
         headers: { 
-            "Content-Type": "application/json",
-            "Accept": 'application/json',
+            // "Content-Type": "application/json",
+            // "Accept": 'application/json',
             "Authorization": "Token " + token
         }
-        
     })
-    .then(resp => resp.json())
+  
     .then(response => {
         if(response.error || response.detail){
           alert(response.error || response.detail)
         } else {
-          console.log('fetch response:', response)
-          dispatch(destroyMessage(response))
+          dispatch(destroyMessage(id))
         }
       })
       .catch(console.log)
