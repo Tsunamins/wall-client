@@ -39,7 +39,7 @@ function SignupForm(props) {
             
             <br/>
             <label>Email</label><br/>
-            <input type="email" value={email}
+            <input type="text" value={email}
                    
                     onChange={e => setEmail(e.target.value)}
                     placeholder='Email'
