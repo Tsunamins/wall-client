@@ -6,20 +6,21 @@ import { connect } from 'react-redux'
 function LoginForm(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-
+  console.log(props)
 //   const handleChange = event => {
 //     event.target.name(event.target.value)
 //   }
   
   const handleSubmit = (event) => {
       event.preventDefault();
+    
       const creds = {
         username: username,
         password: password
       }
 
-      props.login(creds)
-      props.history.push("/")
+     props.login(creds)
+     props.history.push("/")
 
   }
 
