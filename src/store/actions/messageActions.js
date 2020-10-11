@@ -65,7 +65,6 @@ export const editMessage = (message, id) => dispatch => {
 } 
 
 export const deleteMessage = (id) => dispatch => {
-    console.log(id)
     let token = localStorage.token
     return fetch(`http://127.0.0.1:8000/wall-api/messages/${id}/delete/`, {
         method: "DELETE",
@@ -81,8 +80,8 @@ export const deleteMessage = (id) => dispatch => {
         if(response.error || response.detail){
           alert(response.error || response.detail)
         } else {
-          console.log(response)
-          dispatch(updateMessage(response))
+          console.log('fetch response:', response)
+          dispatch(destroyMessage(response))
         }
       })
       .catch(console.log)
