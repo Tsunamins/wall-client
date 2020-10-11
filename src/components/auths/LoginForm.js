@@ -22,6 +22,7 @@ function LoginForm(props) {
       props.history.push("/")
 
   }
+
   if(!props.show){
     return null;
   }
@@ -29,21 +30,21 @@ function LoginForm(props) {
   return (
       <div className='authModal'>
         <form onSubmit={handleSubmit}>
-            <label>Username</label>
+            <label>Username</label><br/>
             <input type="text" value={username}
                    
                     onChange={e => setUsername(e.target.value)}
                     placeholder='Username'
             />
-            
-            <label>Password</label>
+            <br/>
+            <label>Password</label><br/>
             <input type="password" value={password}
                    
                     onChange={e => setPassword(e.target.value)}
                     placeholder='Password'
             />
- 
-      <input type="submit" value="Submit" />
+            <br/>
+            <input type="submit" value="Submit" />
 
     </form>
     </div>
