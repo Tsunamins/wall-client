@@ -60,4 +60,4 @@ class CreateMessage extends Component {
 
 
 
-export default connect(null, {createMessage}) (CreateMessage);
+export default connect(null, {createMessage})(CreateMessage);
