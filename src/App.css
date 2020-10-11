@@ -47,7 +47,7 @@ a, a:visited {
 
 
 /* --- Login as modal --- */
-.LoginForm {
+.authModal {
   text-align: center;
   z-index: 1; /* Sit on top */
   position: fixed;
