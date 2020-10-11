@@ -5,14 +5,25 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { deleteMessage } from '../../store/actions/messageActions'
 
-function ViewMessage({message}) {
+class ViewMessage extends React.Component {
 
-  function handleDelete(){
+  
+  handleDelete = () => {
+   
     this.props.deleteMessage(this.props.message.id)
+    this.props.history.push("/messages")
   }
-     
+
+  render(){
+    console.log(this.props)
+
+    let message = this.props.message || null
+  
+
+
      
   return(
+    
     message ?
       <div>
         <p>{message.content} </p>
@@ -23,7 +34,7 @@ function ViewMessage({message}) {
               <Link to={`/messages/${message.id}/edit`}>Edit this Message</Link>
           </div>
           <div>
-              <button onClick={handleDelete}>Delete Message</button>
+              <button onClick={this.handleDelete}>Delete Message</button>
           </div>
         </div> 
       
@@ -31,7 +42,8 @@ function ViewMessage({message}) {
       </div> 
     :
     <div>display issue</div>
-  )
+    )
+  }
 
 }
 
