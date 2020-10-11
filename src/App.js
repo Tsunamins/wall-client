@@ -14,7 +14,6 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        The App
         <Header {...this.props}/>
         <TheWall {...this.props}/>
       </div>
