@@ -14,8 +14,11 @@ class Header extends React.Component {
                 <div><Logout /></div>    
         : 
                 <div>
-                    <li><Link to="/signup">Sign Up</Link></li> 
-                    <li><Link to="/login">Log In</Link></li>
+                    <div className="Logo"><h1>The Wall</h1></div>
+                    <div className="SignInLinks">
+                      <li><Link to="/signup">Sign Up</Link></li> 
+                      <li><Link to="/login">Log In</Link></li>
+                    </div>
                     <Route exact path='/signup' component={SignupForm}/>
                     <Route exact path='/login' component={LoginForm}/>
                 </div>
