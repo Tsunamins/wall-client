@@ -138,7 +138,7 @@ body {
 }
 
 #Messages a {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.63);
   border-radius: 7px;
   padding: 5px;
   
@@ -152,6 +152,7 @@ body {
   height: 75px;
   border-radius: 50%;
   overflow: hidden;
+  margin: 15px;
 }
 
 #Messages a, a:visited {
