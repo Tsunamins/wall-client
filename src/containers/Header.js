@@ -24,7 +24,7 @@ class Header extends React.Component {
 
       return (
           <div id="Header" >
-            <div id="Logo">The Wall</div>
+            <div id="Logo"><Link to='/'>The Wall</Link></div>
             { this.props.isAuthenticated ?
                 <div><Logout /></div>    
             : 

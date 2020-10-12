@@ -10,6 +10,8 @@ body {
 }
 
 
+
+
 /* --- header comp --- */
 #Header {
   text-align: center;
@@ -118,14 +120,19 @@ body {
 
 /* --- Messages listing --- */
 #Messages {
+  
   color: yellow;
   font-size: 20px;
+  margin-top: 300px;
+  
   margin-bottom: 200px;
   overflow: scroll;
   text-align: center;
   left: 0;
+
 }
 
+/* between each message */
 #Messages div {
   margin-top: 20px;
 }
