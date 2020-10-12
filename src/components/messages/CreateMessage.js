@@ -31,7 +31,7 @@ class CreateMessage extends Component {
 
   render() {
         return (
-            <div className="CreateMessage">
+            <div id="CreateMessage">
               
                 <div>   
                     <form onSubmit={this.handleSubmit}>
@@ -48,7 +48,7 @@ class CreateMessage extends Component {
                             />
                      
                             <br/>
-                            <button type="submit">Write on the Wall</button>
+                            <button className="button" type="submit">Write on the Wall</button>
           
                     </form>
                 </div>

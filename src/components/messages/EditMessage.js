@@ -58,7 +58,7 @@ class EditMessage extends Component {
                             </div>
             
                             <div>
-                                <button type="submit">Submit Changes</button>
+                                <button className="button" type="submit">Submit Changes</button>
                             </div>
                         </form>
                     </div>

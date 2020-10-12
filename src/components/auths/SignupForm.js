@@ -62,7 +62,7 @@ function SignupForm(props) {
             />
             
             <br></br>
-            <input type="submit" value="Submit" />
+            <input className="button" type="submit" value="Submit" />
 
     </form>
     </div>

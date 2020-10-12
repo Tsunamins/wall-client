@@ -25,7 +25,7 @@ class ViewMessage extends React.Component {
   return(
     
     message ?
-      <div className="modal">
+      <div className="modal" id="MessageDetail">
         <Link to="/"><span className='fa fa-close'></span></Link>
         <p>{message.content} </p>
         <p>{message.user}</p>
@@ -36,7 +36,7 @@ class ViewMessage extends React.Component {
             <div>
                 <Link to={`/messages/${message.id}/edit`}>Edit this Message</Link>
                 <br/>
-                <button onClick={this.handleDelete}>Delete Message</button>
+                <button className="button" onClick={this.handleDelete}>Delete Message</button>
 
             </div>
           : <div></div> }
@@ -56,7 +56,7 @@ const mapStateToProps = state => {
   console.log(state)
   return {
     isAuthenticated: state.authReducer.token !== null,
-    currentUser: state.authReducer.current.username
+    currentUser: state.authReducer.current.username || null
   
   }
 }
