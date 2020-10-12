@@ -40,7 +40,7 @@ class EditMessage extends Component {
             return (
             
                 <div id="EditMessage" className="modal">
-                    <Link to="/"><span className='fa fa-close'></span></Link>
+                    <Link to="/"><span className='fa fa-close x-button'></span></Link>
                     <div><h4>Editing this Message</h4></div>
                     <div>   
         

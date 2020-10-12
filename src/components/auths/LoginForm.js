@@ -27,7 +27,7 @@ function LoginForm(props) {
   
   return (
       <div className='modal'>
-        <Link to="/"><span className='fa fa-close'></span></Link>
+        <Link to="/"><span className='fa fa-close x-button'></span></Link>
         <form onSubmit={handleSubmit}>
             <label>Username</label><br/>
             <input type="text" value={username}
