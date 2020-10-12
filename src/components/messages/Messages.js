@@ -6,10 +6,10 @@ import { Link} from 'react-router-dom'
 
 function Messages(props) {
   const messageDetails = props.messages.map(m => 
-    <li key={m.id}>
+    <p key={m.id}>
       <Link to={`/messages/${m.id}`}>{m.content}</Link>
       <span>{m.user}</span>
-    </li>
+    </p>
   )
 
   return(
