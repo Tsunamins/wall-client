@@ -8,9 +8,19 @@ import Logout from '../components/auths/Logout'
 
 
 class Header extends React.Component {
+    getWindowHeight(){
+      console.log('scrolling')
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("Logo").style.fontSize = "10vmin";
+      } else {
+        document.getElementById("Logo").style.fontSize = "20vmin";
+      }
+    }
+
+
 
     render(){
-    
+     window.addEventListener('scroll', this.getWindowHeight);
 
       return (
           <div id="Header" >

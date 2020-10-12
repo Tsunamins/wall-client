@@ -18,6 +18,10 @@ body {
   /* background-image: radial-gradient(rgba(128, 128, 128, 0), black); */
   background-repeat: no-repeat;
   background-position: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  
 
 }
 
@@ -33,6 +37,7 @@ body {
 	-webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+  transition: 0.2s;
 }
 
 #AuthLinks {
