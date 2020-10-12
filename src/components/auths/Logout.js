@@ -6,9 +6,9 @@ import { logout } from '../../store/actions/authActions'
 
 const Logout = ({logout}) => {
     return (
-        <div className="Logout">
+        <div id="Logout">
             <form onSubmit={logout}>
-                <input type="submit" value="Logout" />
+                <input className='button' type="submit" value="Logout" />
             </form>
         </div>
     )
