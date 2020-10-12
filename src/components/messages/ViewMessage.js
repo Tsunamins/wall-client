@@ -31,12 +31,16 @@ class ViewMessage extends React.Component {
         <p>{message.user}</p>
 
         <div>
-          <div>
-              <Link to={`/messages/${message.id}/edit`}>Edit this Message</Link>
-          </div>
-          <div>
-              <button onClick={this.handleDelete}>Delete Message</button>
-          </div>
+          {console.log(this.props)}
+          {this.props.isAuthenticated && this.props.currentUser === message.user ? 
+            <div>
+                <Link to={`/messages/${message.id}/edit`}>Edit this Message</Link>
+                <br/>
+                <button onClick={this.handleDelete}>Delete Message</button>
+
+            </div>
+          : <div></div> }
+        
         </div> 
       
         
@@ -48,4 +52,13 @@ class ViewMessage extends React.Component {
 
 }
 
-export default connect(null, {deleteMessage})(ViewMessage);
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    isAuthenticated: state.authReducer.token !== null,
+    currentUser: state.authReducer.current.username
+  
+  }
+}
+
+export default connect(mapStateToProps, {deleteMessage})(ViewMessage);
