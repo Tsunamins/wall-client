@@ -62,12 +62,13 @@ body {
   transform: translate(-50%, -50%);
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.705); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.788); /* Black w/ opacity */
   padding: 30px;
   font-size: 30px;
   color: white;
 
 }
+
 
 .modal label {
   float: left;
@@ -156,12 +157,23 @@ body {
   font-size: 30px;
   border-radius: 4px;
   border: none;
+
   
 }
 
 .button:hover {
-  background-color: #4a83a8
+  background-color: #4a83a8;
 }
+
+.x-button {
+  color: #5292bd;
+}
+
+.x-button:hover {
+  color: #4a83a8;
+}
+
+
 
 
 
