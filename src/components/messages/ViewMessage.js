@@ -26,7 +26,7 @@ class ViewMessage extends React.Component {
     
     message ?
       <div className="modal" id="MessageDetail">
-        <Link to="/"><span className='fa fa-close'></span></Link>
+        <Link to="/"><span className='fa fa-close x-button'></span></Link>
         <p>{message.content} </p>
         <p>{message.user}</p>
 
@@ -34,9 +34,13 @@ class ViewMessage extends React.Component {
           {console.log(this.props)}
           {this.props.isAuthenticated && this.props.currentUser === message.user ? 
             <div>
-                <Link to={`/messages/${message.id}/edit`}>Edit this Message</Link>
+              <div>
+                <Link to={`/messages/${message.id}/edit`} className="button">Edit this Message</Link>
+              </div>
                 <br/>
+                <div>
                 <button className="button" onClick={this.handleDelete}>Delete Message</button>
+                </div>
 
             </div>
           : <div></div> }
