@@ -19,7 +19,6 @@ class TheWall extends React.Component {
     render(){
         return (
             <div className="TheWall">
-                ---The Wall---
                 <Messages {...this.props} />
 
                 <Route exact path='/messages/:id' render={props => {
@@ -32,8 +31,10 @@ class TheWall extends React.Component {
                     return <EditMessage message={message} {...props}/>
                         }
                 }/>
-
+               
+             
                 <CreateMessage {...this.props } />
+               
 
             </div>
         );
