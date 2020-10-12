@@ -34,7 +34,7 @@ a, a:visited {
 }
 
 .Logo {
-  margin-left: 43%;
+  margin-left: 35%;
   text-align: center;
   color: white;
   font-size: 50px;
@@ -104,6 +104,21 @@ a, a:visited {
   background-color: #4a83a8
 }
 
+
+/* --- Logout --- */
+.Logout input[type=submit] {
+  background-color: #5292bd;
+  color: white;
+  padding: 14px 20px;
+  margin-left: 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+
+}
+
 /* --- the wall --- */
 .TheWall {
   margin-top: 20px;
@@ -153,6 +168,22 @@ div.CreateMessage > div > form > button {
 div.CreateMessage > div > form > button:hover {
   background-color: #4a83a8
 }
+
+
+.button {
+  cursor: pointer;
+  background-color: #5292bd;
+  color: white;
+  font-size: 30px;
+  border-radius: 4px;
+  padding: 14px 20px;
+  margin: 8px 0;
+}
+
+.button:hover {
+  background-color: #4a83a8
+}
+
 
 
 
