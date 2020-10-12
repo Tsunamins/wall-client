@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { editMessage } from '../../store/actions/messageActions'
 
 class EditMessage extends Component {
@@ -38,8 +39,9 @@ class EditMessage extends Component {
         } else {
             return (
             
-                <div className="EditMessage">
-                    <div><h4>Edit this Message</h4></div>
+                <div id="EditMessage" className="modal">
+                    <Link to="/"><span className='fa fa-close'></span></Link>
+                    <div><h4>Editing this Message</h4></div>
                     <div>   
         
                         <form onSubmit={this.handleSubmit}>
@@ -51,6 +53,7 @@ class EditMessage extends Component {
                                     placeholder={message.content}
                                     id="content"                     
                                     rows="3"
+                                    cols="50"
                                 />
                             </div>
             

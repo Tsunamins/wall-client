@@ -25,7 +25,8 @@ class ViewMessage extends React.Component {
   return(
     
     message ?
-      <div>
+      <div className="modal">
+        <Link to="/"><span className='fa fa-close'></span></Link>
         <p>{message.content} </p>
         <p>{message.user}</p>
 
