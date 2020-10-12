@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { login } from '../../store/actions/authActions'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function LoginForm(props) {
   const [username, setUsername] = useState("")
@@ -23,13 +24,10 @@ function LoginForm(props) {
      props.history.push("/")
 
   }
-
-  if(!props.show){
-    return null;
-  }
   
   return (
       <div className='authModal'>
+        <Link to="/"><span className='fa fa-close'></span></Link>
         <form onSubmit={handleSubmit}>
             <label>Username</label><br/>
             <input type="text" value={username}

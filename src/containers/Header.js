@@ -5,59 +5,27 @@ import { Link, Route } from 'react-router-dom'
 import LoginForm from '../components/auths/LoginForm'
 import SignupForm from '../components/auths/SignupForm'
 import Logout from '../components/auths/Logout'
+import AuthModal from './AuthModal'
 
 class Header extends React.Component {
 
-  state = {
-    showLoginForm: false,
-    showSignupForm: false,
-  };
-  showLogin = e => {
-    this.setState({
-      showLoginForm: true,
-      showSignupForm: false,
-    });
-  };
-
-  showSignup = e => {
-    this.setState({
-      showLoginForm: false,
-      showSignupForm: true
-    });
-  };
-
-  exitModal = e => {
-    if (this.node.contains(e.target)) {
-      return;
-    }
-    this.setState({
-      showLoginForm: false,
-      showSignupForm: false,
-    })
-  }
-
-
-
     render(){
-    document.addEventListener('click', this.exitModal);
+    
 
       return (
           <div className="Header" >
             <div className="Logo"><h1>The Wall</h1></div>
             { this.props.isAuthenticated ?
                 <div><Logout /></div>    
-        : 
-                <div className="AuthLinks" ref={node => this.node = node}>
-                      <Link to="/signup" onClick={e => {this.showSignup();}}>Sign Up</Link>
-                      <Link to="/login" onClick={e => {this.showLogin();}}>Log In</Link>
-                      <SignupForm show={this.state.showSignupForm} {...this.props}/>
-                      <LoginForm show={this.state.showLoginForm} {...this.props}/>
-                  
-                   
-                   
+            : 
+                <div className="AuthLinks">
+                    <Link to="/signup">Sign Up</Link> 
+                    <Link to="/login">Log In</Link>
+                    <Route exact path='/signup' component={SignupForm}/>
+                    <Route exact path='/login' component={LoginForm}/>
                 </div>
         
-        }
+            }
         </div>
       );
     }
