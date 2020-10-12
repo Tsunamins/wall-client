@@ -26,7 +26,6 @@ body {
 }
 
 #Logo {
- 
   font-size: 20vmin;
   background-image: url("./images/wallforwidth.jpg");
   background-size: cover;
@@ -54,7 +53,7 @@ body {
 }
 
 
-/* --- Login as modal --- */
+/* --- modal --- */
 .modal {
   z-index: 1; /* Sit on top */
   position: fixed;
@@ -86,27 +85,21 @@ body {
   
 }
 
+/* --- modal button needs --- */
 .modal input[type=submit] {
   width: 100%;
-  background-color: #5292bd;
-  color: white;
-  padding: 14px 20px;
   margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 30px;
 
 }
-
-.authModal input[type=submit]:hover {
-  background-color: #4a83a8;
-}
-
 
 /* --- Logout Button specifics --- */
 #Logout input[type=submit] {
   margin-left: 50px;
+  background-color: #0a92ec;
+}
+
+#Logout input[type=submit]:hover {
+  background-color: #4a83a8
 }
 
 /* --- the wall --- */
@@ -119,71 +112,50 @@ body {
 
 /* --- Messages listing --- */
 .Messages {
-
-  /* background-color: rgba(0, 0, 0, 0.582); */
   color: yellow;
   font-size: 20px;
   margin-bottom: 150px;
   overflow: scroll;
   text-align: center;
   left: 0;
- 
-
 }
 
 .Messages a, a:visited {
   color: yellow;
 }
 
-.Messages p {
-  
-}
 
-.CreateMessage {
-/*   
-  background-image: url("./images/wall-yellow-1551920.jpg"); */
+/* create message comp */
+#CreateMessage {
   background-color: #32303d;
   font-size: 30px;
   color: white;
-
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-
-  color: white;
   text-align: center;
   
 }
 
-
-
-div.CreateMessage > div > form > button {
-  
-  background-color: #5292bd;
-  color: white;
+/* --- create message button specifics */
+#CreateMessage > div > form > button {
   padding: 7px 10px;
   margin: 5px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   font-size: 20px;
-  
-}
-
-div.CreateMessage > div > form > button:hover {
-  background-color: #4a83a8
+ 
 }
 
 
+/* --- buttons, general --- */
 .button {
+  background-color: #5292bd;
   cursor: pointer;
-  background-color: #0a92ec;
   color: white;
+  padding: 14px 20px;
   font-size: 30px;
   border-radius: 4px;
   border: none;
-  padding: 14px 20px;
   
 }
 
