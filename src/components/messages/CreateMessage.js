@@ -34,8 +34,6 @@ class CreateMessage extends Component {
             <div id="CreateMessage">
                 <div>   
                     <form onSubmit={this.handleSubmit}>
-                            <label htmlFor="content">Add to the writing on the wall:</label>
-
                             <br/>
                             <textarea
                                 onChange={this.handleChange}
