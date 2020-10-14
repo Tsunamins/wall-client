@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { editMessage } from '../../store/actions/messageActions'
-import message from "../../store/reducers/messageReducer";
 
 class EditMessage extends Component {
    
