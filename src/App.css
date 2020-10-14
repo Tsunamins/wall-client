@@ -121,7 +121,7 @@ body {
 /* --- Messages listing --- */
 #Messages {
   
-  color: yellow;
+  color: #1cecff;
   font-size: 20px;
   margin-top: 300px;
   margin-bottom: 200px;
@@ -144,9 +144,10 @@ body {
   
 }
 
+/* user of the message tag */
 #Messages span {
   
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.63);
   padding: 10px;
   width: 75px;
   height: 75px;
@@ -155,8 +156,9 @@ body {
   margin: 15px;
 }
 
+/* each message */
 #Messages a, a:visited {
-  color: yellow;
+  color: #1cecff;
 }
 
 
