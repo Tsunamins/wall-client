@@ -11,8 +11,8 @@ export const login = (creds) => {
         .then(resp => resp.json())
 
         .then(response => {
-            if(response.error){
-                alert(response.error)
+            if(response.error || response.detail){
+                alert(response.error || response.detail)
             } else {
             const token = response.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
@@ -39,9 +39,11 @@ export const signup = (creds) => {
         })
         .then(resp => resp.json())
         .then(response => {
-            if(response.error){
-                alert(response.error)
+            if(response.error || response.detail){
+                console.log(response)
+                alert(response.error || response.detail)
             } else {
+                console.log(response)
                 const token = response.key;
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
                 localStorage.setItem('token', token);
