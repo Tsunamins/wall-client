@@ -1,20 +1,17 @@
 //ACTIONS
 export const getMessages = () => dispatch => {  
-    
     return fetch('http://127.0.0.1:8000/wall-api/messages/')
      .then(resp => resp.json())
      .then(response => {
          if(response.error){
              alert(response.error)
          } else {
-            console.log(response)
            dispatch(getAllMessages(response))
          }
          })
          .catch(console.log)
        
 }
-
 
 export const createMessage = (message) => dispatch => {
     let token = localStorage.token
@@ -33,7 +30,6 @@ export const createMessage = (message) => dispatch => {
         if(response.error || response.detail){
           alert(response.error || response.detail)
         } else {
-          console.log(response)
           dispatch(addMessage(response))
         }
       })
@@ -57,7 +53,6 @@ export const editMessage = (message, id) => dispatch => {
         if(response.error || response.detail){
           alert(response.error || response.detail)
         } else {
-          console.log(response)
           dispatch(updateMessage(response))
         }
       })
@@ -69,8 +64,6 @@ export const deleteMessage = (id) => dispatch => {
     return fetch(`http://127.0.0.1:8000/wall-api/messages/${id}/delete/`, {
         method: "DELETE",
         headers: { 
-            // "Content-Type": "application/json",
-            // "Accept": 'application/json',
             "Authorization": "Token " + token
         }
     })

@@ -17,6 +17,7 @@ class TheWall extends React.Component {
       }
 
     render(){
+ 
         return (
             <div className="TheWall">
                 <Messages {...this.props} />
@@ -31,14 +32,10 @@ class TheWall extends React.Component {
                     return <EditMessage message={message} {...props}/>
                         }
                 }/>
-               
-             
-                <CreateMessage {...this.props } />
-               
 
+                <CreateMessage {...this.props } />
             </div>
         );
-  
     }
 }
 

@@ -7,7 +7,7 @@ class CreateMessage extends Component {
 
     state = {
       content: "",
-  }
+    }
 
     handleChange = e => {
         this.setState({ 
@@ -32,11 +32,10 @@ class CreateMessage extends Component {
   render() {
         return (
             <div id="CreateMessage">
-              
                 <div>   
                     <form onSubmit={this.handleSubmit}>
-                    
                             <label htmlFor="content">Add to the writing on the wall:</label>
+
                             <br/>
                             <textarea
                                 onChange={this.handleChange}
@@ -53,12 +52,9 @@ class CreateMessage extends Component {
                     </form>
                 </div>
             </div>
-  
-    );
+        );
   }
 
 }
-
-
 
 export default connect(null, {createMessage})(CreateMessage);

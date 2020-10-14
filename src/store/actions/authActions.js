@@ -1,7 +1,5 @@
-
 export const login = (creds) => {
     return dispatch => {
-       
         fetch('http://127.0.0.1:8000/rest-auth/login/', {
             headers: {
                 "Content-Type": "application/json",
@@ -29,12 +27,8 @@ export const login = (creds) => {
     }
 }
 
-
 export const signup = (creds) => {
-    console.log(creds)
-    
     return dispatch => {
-     
         fetch('http://127.0.0.1:8000/rest-auth/registration/', {
             headers: {
                 "Content-Type": "application/json",
@@ -48,7 +42,6 @@ export const signup = (creds) => {
             if(response.error){
                 alert(response.error)
             } else {
-                console.log(response)
                 const token = response.key;
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
                 localStorage.setItem('token', token);
@@ -59,7 +52,6 @@ export const signup = (creds) => {
             }
         })
         .catch(console.log)
-        
     }
 }
 
@@ -77,18 +69,13 @@ export const getCurrentUser = () => dispatch => {
        
         .then(response => {
             if(response.error){
-                console.log(response)
                 alert(response.error)
             } else {
-            console.log(response)
             dispatch(setCurrentUser(response))
         }
     })
     .catch(console.log)
 }
-
-
-
 
 
 //ACTION CREATORS
@@ -103,7 +90,6 @@ export const setCurrentUser = user => {
     return {
         type: "CURRENT_USER",
         user
-
     }
 }
 

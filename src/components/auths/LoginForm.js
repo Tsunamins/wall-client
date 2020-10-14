@@ -7,14 +7,9 @@ import { Link } from 'react-router-dom'
 function LoginForm(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  console.log(props)
-//   const handleChange = event => {
-//     event.target.name(event.target.value)
-//   }
   
   const handleSubmit = (event) => {
       event.preventDefault();
-    
       const creds = {
         username: username,
         password: password
@@ -22,7 +17,6 @@ function LoginForm(props) {
 
      props.login(creds)
      props.history.push("/")
-
   }
   
   return (
@@ -30,22 +24,21 @@ function LoginForm(props) {
         <Link to="/"><span className='fa fa-close x-button'></span></Link>
         <form onSubmit={handleSubmit}>
             <label>Username</label><br/>
-            <input type="text" value={username}
-                   
-                    onChange={e => setUsername(e.target.value)}
-                    placeholder='Username'
+            <input type="text" 
+                   value={username}
+                   onChange={e => setUsername(e.target.value)}
+                   placeholder='Username'
             />
             <br/>
             <label>Password</label><br/>
-            <input type="password" value={password}
-                   
-                    onChange={e => setPassword(e.target.value)}
-                    placeholder='Password'
+            <input type="password" 
+                   value={password}
+                   onChange={e => setPassword(e.target.value)}
+                   placeholder='Password'
             />
             <br/>
             <input className="button" type="submit" value="Submit" />
-
-    </form>
+      </form>
     </div>
   );
 }
