@@ -8,6 +8,14 @@ import Logout from '../components/auths/Logout'
 
 
 class Header extends React.Component {
+    componentDidMount(){
+      window.addEventListener('scroll', this.getWindowHeight);
+    }
+
+    componentWillUnmount(){
+      window.addEventListener('scroll', this.getWindowHeight);
+    }
+
     getWindowHeight(){
       console.log('scrolling')
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -17,11 +25,7 @@ class Header extends React.Component {
       }
     }
 
-
-
     render(){
-     window.addEventListener('scroll', this.getWindowHeight);
-
       return (
           <div id="Header" >
             <div id="Logo"><Link to='/'>The Wall</Link></div>
@@ -33,14 +37,10 @@ class Header extends React.Component {
                     <Link to="/login">Log In</Link>
                     <Route exact path='/signup' component={SignupForm}/>
                     <Route exact path='/login' component={LoginForm}/>
-                </div>
-        
-            }
+                </div> }
         </div>
       );
     }
   }
-  
-
-  
+ 
 export default Header;
