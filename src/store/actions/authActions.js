@@ -39,9 +39,9 @@ export const signup = (creds) => {
         })
         .then(resp => resp.json())
         .then(response => {
-            if(response.error || response.detail){
+            if(response.error || response.detail || response.email){
                 console.log(response)
-                alert(response.error || response.detail)
+                alert(response.error || response.detail || response.email)
             } else {
                 console.log(response)
                 const token = response.key;
