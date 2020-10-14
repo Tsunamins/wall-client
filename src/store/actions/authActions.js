@@ -11,8 +11,8 @@ export const login = (creds) => {
         .then(resp => resp.json())
 
         .then(response => {
-            if(response.error || response.detail){
-                alert(response.error || response.detail)
+            if(response.error || response.detail || response.non_field_errors){
+                alert(response.error || response.detail || response.non_field_errors + ' Please Verify Your Email before logging in.')
             } else {
             const token = response.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
