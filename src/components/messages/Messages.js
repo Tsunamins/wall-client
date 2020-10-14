@@ -11,7 +11,7 @@ function Messages(props) {
       <span>{m.user}</span>
     </div>
   )
-
+  
   return(
         <div id="Messages">
             {messageDetails}
