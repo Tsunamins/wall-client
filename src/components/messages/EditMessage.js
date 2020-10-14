@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { editMessage } from '../../store/actions/messageActions'
+import message from "../../store/reducers/messageReducer";
 
 class EditMessage extends Component {
-    
+   
     state = {
-      content: "",
+        content:  ''
+    }
+
+    setValue = e => {
+        this.setState({ 
+            [e.target.id]: e.target.placeholder 
+        });
     }
 
     handleChange = e => {
@@ -27,27 +34,29 @@ class EditMessage extends Component {
         })
 
         this.props.history.push(`/messages/${this.props.match.params.id}`)
-        console.log(this.props)
+    
     };
 
 
   render() {
-        let message = this.props.message || null
+ 
       
+        let message = this.props.message || null
         if(message === null){
             return (<div></div>)
         } else {
+         
             return (
             
                 <div id="EditMessage" className="modal">
                     <Link to="/"><span className='fa fa-close x-button'></span></Link>
                     <div><h4>Editing this Message</h4></div>
-                    <div>   
-        
+                    <div>     
                         <form onSubmit={this.handleSubmit}>
-                            <div>
+                            <div> 
                             <label htmlFor="content">Change the Message, 250 characters or less:</label>
                                 <textarea
+                                    onClick={this.setValue}
                                     onChange={this.handleChange}
                                     value={this.state.content}
                                     placeholder={message.content}
@@ -57,7 +66,6 @@ class EditMessage extends Component {
                                 >
                                 </textarea>
                             </div>
-            
                             <div>
                                 <button className="button" type="submit">Submit Changes</button>
                             </div>
