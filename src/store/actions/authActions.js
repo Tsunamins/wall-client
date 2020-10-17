@@ -80,6 +80,34 @@ export const getCurrentUser = () => dispatch => {
 }
 
 
+export const logoutUser = () => dispatch => {
+    console.log('triggered new logout user function')
+    return fetch('http://127.0.0.1:8000/rest-auth/logout/', {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            method: "POST",
+
+        })
+        .then(resp => resp.json())
+        .then(response => {
+            if(response.error || response.non_field_errors){
+                console.log(response)
+                alert(response.error || response.non_field_errors)
+            } else {
+                console.log(response)
+                alert(response.detail)
+                localStorage.removeItem('token');
+                localStorage.removeItem('expirationDate');
+                dispatch(logout())
+            }
+        })
+        .catch(console.log)
+    
+}
+
+
 //ACTION CREATORS
 export const authSuccess = token => {
     return {
@@ -104,8 +132,7 @@ export const checkAuthTimeout = expirationTime => {
 }
 
 export const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('expirationDate');
+    
     return {
         type: "AUTH_LOGOUT"
     };
