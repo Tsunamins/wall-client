@@ -111,4 +111,21 @@ export const logout = () => {
     };
 }
 
+export const checkToken = () => {
+    return dispatch => {
+        const token = localStorage.getItem('token');
+        if (token === undefined) {
+            dispatch(logout());
+        } else {
+            const expirationDate = new Date(localStorage.getItem('expirationDate'));
+            if ( expirationDate <= new Date() ) {
+                dispatch(logout());
+            } else {
+                dispatch(authSuccess(token));
+                dispatch(checkAuthTimeout( (expirationDate.getTime() - new Date().getTime()) / 1000) );
+            }
+        }
+    }
+}
+
 
