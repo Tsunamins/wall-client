@@ -22,7 +22,7 @@ class ViewMessage extends React.Component {
           <p>{message.user}</p>
 
           <div>
-              {this.props.isAuthenticated && this.props.currentUser === message.user ? 
+              {this.props.isAuthenticated && this.props.currentUser.username === message.user ? 
                 <div>
                     <div>
                       <Link to={`/messages/${message.id}/edit`} className="button">Edit this Message</Link>
@@ -43,9 +43,10 @@ class ViewMessage extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     isAuthenticated: state.authReducer.token !== null,
-    currentUser: state.authReducer.current.username || null
+    currentUser: state.authReducer.current || null
   }
 }
 
