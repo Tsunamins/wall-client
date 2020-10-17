@@ -25,6 +25,7 @@ function SignupForm(props) {
   }
 
   return (
+       
       <div className='modal'>
         <Link to="/"><span className='fa fa-close x-button'></span></Link>     
         <form onSubmit={handleSubmit}>
@@ -60,6 +61,7 @@ function SignupForm(props) {
             />
 
             <br/>
+  
             <input className="button" type="submit" value="Submit" />
 
         </form>
