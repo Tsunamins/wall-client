@@ -1,10 +1,14 @@
-Front End half of the wall created with create-react-app
+# Wall Front End
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-First, in the project directory:
+## Requirements:
+* Node: 10.19, or greater: https://nodejs.org/en/
+* npm: 6.14.4, or greater: https://www.npmjs.com/get-npm
+In the project directory, you can run:
 
 ### `npm install`
 
-In the project directory, you can run:
+Followed by:
 
 ### `npm start`
 
@@ -12,8 +16,4 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-Original local environment:<br />
-System: Ubuntu 20.04<br />
-Node: v10.19.0<br />
-React: ^16.13.1<br />
 
