@@ -1,3 +1,9 @@
+Front End half of the wall created with create-react-app
+
+First, in the project directory:
+
+### `npm install`
+
 In the project directory, you can run:
 
 ### `npm start`
