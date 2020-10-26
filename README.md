@@ -3,7 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Requirements:
 * Node: 10.19, or greater: https://nodejs.org/en/
-* npm: 6.14.4, or greater: https://www.npmjs.com/get-npm
+* npm: 6.14.4, or greater: https://www.npmjs.com/get-npm<br />
+
 In the project directory, you can run:
 
 ### `npm install`
